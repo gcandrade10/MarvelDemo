@@ -1,0 +1,34 @@
+plugins {
+    id 'java-library'
+    id 'kotlin'
+}
+
+java {
+    version = ""
+}
+
+compileKotlin {
+    kotlinOptions {
+        jvmTarget = JavaVersion.VERSION_1_8.toString()
+    }
+}
+compileTestKotlin {
+    kotlinOptions {
+        jvmTarget = JavaVersion.VERSION_1_8.toString()
+    }
+}
+
+dependencies {
+    implementation mb_kotlin.values()
+
+    //testImplementation project(":test")
+    testImplementation mb_test.values()
+    testRuntimeOnly mb_test_runtime.values()
+}
+
+tasks.withType(Test) {
+    useJUnitPlatform()
+}
+
+sourceCompatibility = JavaVersion.VERSION_1_8
+targetCompatibility = JavaVersion.VERSION_1_8

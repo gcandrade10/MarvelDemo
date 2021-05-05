@@ -1,0 +1,189 @@
+ext {
+    kotlin_version = '1.4.20'
+    gradle_tools = '4.0.1'
+    lint_version = '27.0.1' //It must be gradle_tools + 23
+    gradle_idea_ext = '0.10'
+    gradle_download_version = '4.1.1'
+    node_version = '1.3.1'
+    build_tools = '30.0.3'
+    nav_version = '2.3.1'
+    googleservices_version = '4.3.3'
+    sonarqube_version = '3.1.1'
+    jacoco_version = '0.8.6'
+    jacoco_android_version = '0.2'
+    detekt_version = '1.5.1'
+    appdynamics_version = '20.12.1'
+    plugin_junit5_version = '1.7.1.1'
+
+    sdk_compile = 30
+    sdk_min = 21
+    sdk_target = 30
+
+    core_version = '4.52.0'
+    components_version = '17.251.0'
+    wealth_version = '0.42.0'
+    onboarding_version = '6.46.3'
+    kotlinCoroutines_version = '1.4.1'
+    androidXCore_version = '1.3.1'
+    appcompat_version = '1.2.0'
+    constraintLayout_version = '2.0.4'
+    recyclerView_version = '1.1.0'
+    androidx_swiperefreshlayout_version = '1.1.0'
+    navigation_version = '2.3.3'
+    annotation_version = '1.1.0'
+    material_version = '1.2.1'
+    androidLifecycle_version = '2.2.0'
+    okhttp_version = '4.9.0'
+    retrofit_version = '2.9.0'
+    moshi_version = '1.10.0'
+    gson_version = '2.8.6'
+    glide_version = '4.9.0'
+    mpandroidChart_version = 'v3.1.0'
+    firebaseIid_version = '20.1.7'
+    biometric_version = '1.0.1'
+    koin_version = '2.2.2'
+    philology_version = '2.1.0'
+    viewpump_version = '2.0.3'
+    tealium_version = '5.7.0'
+    tealium_lifecycle_version = '1.1.2'
+    vuSDK_version = '1.9.9.57'
+    firebase_version = '26.1.0'
+    neolane_version = '1.0.27'
+    biocatch_version = '2.14.0.433'
+    map_kts_version = '1.7.0'
+    map_utils_version = '2.0.3'
+    map_play_service_version = '17.0.0'
+    junit_version = '4.12'
+    junit5_version = '5.7.1'
+    mockito_version = '3.2.4'
+    mockitoJupiter_version = '3.8.0'
+    mockitoKotlin_version = '2.2.0'
+    androidXTest_version = '1.3.0'
+    mockk_version = '1.10.0'
+    json_version = '20200518'
+    powermock_version = '2.0.7'
+    robolectric_version = '1.0.0'
+    testRunner_version = '1.2.0'
+    espresso_version = '3.2.0'
+    rules_version = '1.2.0'
+    junitKtx_version = '1.1.1'
+    okhttp3Idling_version = '1.0.0'
+    lottie_version = '3.4.0'
+    flexbox_version = '2.0.1'
+    fragmentx_version = '1.3.0'
+
+    mb_core = [
+            app        : "com.openbank.core:app:$core_version",
+            domain     : "com.openbank.core:domain:$core_version",
+            data       : "com.openbank.core:data:$core_version",
+            fundaments : "com.openbank.core:fundaments:$core_version",
+            test       : "com.openbank.core:test:$core_version",
+            testAndroid: "com.openbank.core:test-android:$core_version",
+            commonflows: "com.openbank.core:commonflows:$core_version",
+            tracker    : "com.openbank.core:tracker:$core_version",
+            lint       : "com.openbank.core:lint:$core_version"
+    ]
+    mb_onboarding = [
+            openbankEs: "com.openbank.onboarding.openbankEs:lib:$onboarding_version",
+            trackerEs : "com.openbank.onboarding.openbankEs:tracker:$onboarding_version",
+            openbankAr: "com.openbank.onboarding.openbankAr:lib:$onboarding_version",
+            trackerAr : "com.openbank.onboarding.openbankAr:tracker:$onboarding_version"
+    ]
+    mb_wealth = [
+            openbankEs: "com.openbank.wealth.openbankEs:lib:$wealth_version",
+    ]
+    mb_kotlin = [
+            stdlib    : "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version",
+            coroutines: "org.jetbrains.kotlinx:kotlinx-coroutines-android:$kotlinCoroutines_version",
+            reflect   : "org.jetbrains.kotlin:kotlin-reflect:$kotlin_version"
+    ]
+    mb_android = [
+            androidxCore      : "androidx.core:core-ktx:$androidXCore_version",
+            appcompat         : "androidx.appcompat:appcompat:$appcompat_version",
+            constraintLayout  : "androidx.constraintlayout:constraintlayout:$constraintLayout_version",
+            navigationUi      : "androidx.navigation:navigation-ui-ktx:$navigation_version",
+            navigationFragment: "androidx.navigation:navigation-fragment-ktx:$navigation_version",
+            navigationDynamic : "androidx.navigation:navigation-dynamic-features-fragment:$navigation_version",
+            annotation        : "androidx.annotation:annotation:$annotation_version",
+            recyclerView      : "androidx.recyclerview:recyclerview:$recyclerView_version",
+            swipe             : "androidx.swiperefreshlayout:swiperefreshlayout:$androidx_swiperefreshlayout_version",
+            material          : "com.google.android.material:material:$material_version",
+            googleMapKts      : "com.google.maps.android:maps-utils-ktx:$map_kts_version",
+            googleMapUtils    : "com.google.maps.android:android-maps-utils:$map_utils_version",
+            mapPlayService    : "com.google.android.gms:play-services-maps:$map_play_service_version",
+            mapLocationService: "com.google.android.gms:play-services-location:$map_play_service_version",
+            fragmentx         : "androidx.fragment:fragment-ktx:$fragmentx_version"
+    ]
+    mb_androidArch = [
+            lifecycle: "androidx.lifecycle:lifecycle-extensions:$androidLifecycle_version"
+    ]
+    mb_network = [
+            okhttp            : "com.squareup.okhttp3:okhttp:$okhttp_version",
+            okhttpInterceptor : "com.squareup.okhttp3:logging-interceptor:$okhttp_version",
+            retrofit          : "com.squareup.retrofit2:retrofit:$retrofit_version",
+            retrofitConverter : "com.squareup.retrofit2:converter-moshi:$retrofit_version",
+            moshi             : "com.squareup.moshi:moshi-kotlin:$moshi_version",
+            moshiCodegen      : "com.squareup.moshi:moshi-kotlin-codegen:$moshi_version"
+    ]
+    mb_libs = [
+            firebaseIid       : "com.google.firebase:firebase-iid:$firebaseIid_version",
+            biometric         : "androidx.biometric:biometric:$biometric_version",
+            koinViewModel     : "org.koin:koin-androidx-viewmodel:$koin_version",
+            philology         : "com.jcminarro:Philology:$philology_version",
+            viewpump          : "io.github.inflationx:viewpump:$viewpump_version",
+            components        : "com.openbank.homebanking:components:$components_version",
+            gson              : "com.google.code.gson:gson:$gson_version",
+            vuSDK             : "com.vusecurity:vuonboardingsdk:$vuSDK_version",
+            firebaseBom       : "com.google.firebase:firebase-bom:$firebase_version",
+            glide             : "com.github.bumptech.glide:glide:$glide_version",
+            glideAnnotation   : "com.github.bumptech.glide:compiler:$glide_version",
+            lottie            : "com.airbnb.android:lottie:$lottie_version",
+            mpandroidChart    : "com.github.PhilJay:MPAndroidChart:$mpandroidChart_version",
+            flexbox           : "com.google.android:flexbox:$flexbox_version"
+    ]
+    mb_messaging = [
+            firebaseMessaging: "com.google.firebase:firebase-messaging-ktx"
+    ]
+    mb_analytics = [
+            appdynamics      : "com.appdynamics:appdynamics-runtime:$appdynamics_version",
+            tealium          : "com.tealium:library:$tealium_version",
+            tealiumLifecycle : "com.tealium:lifecycle:$tealium_lifecycle_version",
+            firebaseCore     : "com.google.firebase:firebase-core:$firebase_version",
+            firebaseAnalytics: "com.google.firebase:firebase-analytics-ktx",
+            neolane          : ":neolane_sdk-$neolane_version-release",
+            bioCatchDebug    : "androidsdk:sdk-debug:$biocatch_version",
+            bioCatchRelease  : "androidsdk:sdk-release:$biocatch_version"
+    ]
+    mb_test = [
+            coroutinesTest: "org.jetbrains.kotlinx:kotlinx-coroutines-test:$kotlinCoroutines_version",
+            jupiter       : "org.junit.jupiter:junit-jupiter-api:$junit5_version",
+            jupiterparams : "org.junit.jupiter:junit-jupiter-params:$junit5_version",
+            junit         : "junit:junit:$junit_version",
+            mockito       : "org.mockito:mockito-core:$mockito_version",
+            mockitoJupiter: "org.mockito:mockito-junit-jupiter:$mockitoJupiter_version",
+            mockitoInline : "org.mockito:mockito-inline:$mockito_version",
+            mockitoKotlin : "com.nhaarman.mockitokotlin2:mockito-kotlin:$mockitoKotlin_version",
+            mockk         : "io.mockk:mockk:$mockk_version",
+            json          : "org.json:json:$json_version",
+            koinTest      : "org.koin:koin-test:$koin_version",
+            koinTestJu5   : "org.koin:koin-test-junit5:$koin_version"
+    ]
+    mb_test_runtime = [
+            jupiter       : "org.junit.jupiter:junit-jupiter-engine:$junit5_version",
+            junitVintage  : "org.junit.vintage:junit-vintage-engine:$junit5_version"
+    ]
+    mb_testAndroid = [
+            archCoreTesting: "android.arch.core:core-testing:$androidXCore_version",
+            robolectric    : "androidx.test:core:$robolectric_version",
+            testRunner     : "androidx.test:runner:$testRunner_version",
+            espresso       : "androidx.test.espresso:espresso-contrib:$espresso_version",
+            rules          : "androidx.test:rules:$rules_version",
+            extJunit       : "androidx.test.ext:junit-ktx:$junitKtx_version",
+            mockWebServer  : "com.squareup.okhttp3:mockwebserver:$okhttp_version",
+            okhttpIdling   : "com.jakewharton.espresso:okhttp3-idling-resource:$okhttp3Idling_version",
+    ]
+    mb_lint = [
+            lintApi     : "com.android.tools.lint:lint-api:$lint_version",
+            lintChecks  : "com.android.tools.lint:lint-checks:$lint_version"
+    ]
+}
