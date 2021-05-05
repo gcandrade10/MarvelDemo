@@ -1,6 +1,5 @@
 package com.example.domain
 
-import com.example.domain.repository.Failure
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
 import kotlin.coroutines.CoroutineContext

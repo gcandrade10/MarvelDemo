@@ -123,7 +123,8 @@ ext {
             retrofit          : "com.squareup.retrofit2:retrofit:$retrofit_version",
             retrofitConverter : "com.squareup.retrofit2:converter-moshi:$retrofit_version",
             moshi             : "com.squareup.moshi:moshi-kotlin:$moshi_version",
-            moshiCodegen      : "com.squareup.moshi:moshi-kotlin-codegen:$moshi_version"
+            moshiCodegen      : "com.squareup.moshi:moshi-kotlin-codegen:$moshi_version",
+            okhttpProfiler    : "com.localebro:okhttpprofiler:1.0.8"
     ]
     mb_libs = [
             firebaseIid       : "com.google.firebase:firebase-iid:$firebaseIid_version",

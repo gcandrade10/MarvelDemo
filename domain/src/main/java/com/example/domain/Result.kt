@@ -21,3 +21,9 @@ sealed class Result<out E, out S> {
             is Success -> fnR(success)
         }
 }
+
+fun <E, S> Result<E, S>.getOrNull(): S? =
+    when (this) {
+        is Result.Success -> success
+        else -> null
+    }
