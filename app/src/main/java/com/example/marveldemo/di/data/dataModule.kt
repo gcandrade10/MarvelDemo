@@ -8,6 +8,7 @@ import com.example.data.source.remote.mapper.CharactersRemoteMapper
 import com.example.data.source.remote.mapper.CharactersRemoteMapperImpl
 import com.example.domain.repository.CharactersRepository
 import com.example.marveldemo.BuildConfig
+import com.example.marveldemo.MarvelRequestGenerator
 import com.localebro.okhttpprofiler.OkHttpProfilerInterceptor
 import okhttp3.OkHttpClient
 import org.koin.dsl.module
@@ -15,12 +16,7 @@ import retrofit2.Retrofit
 
 internal val dataModule = module {
     single<CharactersApi> {
-        val builder = OkHttpClient.Builder()
-        if (BuildConfig.DEBUG) {
-            builder.addInterceptor(OkHttpProfilerInterceptor())
-        }
-        val client = builder.build()
-        Retrofit.Builder().client(client).build().create(CharactersApi::class.java)
+        MarvelRequestGenerator.getClient()
     }
     single<CharactersRemoteMapper> { CharactersRemoteMapperImpl() }
 

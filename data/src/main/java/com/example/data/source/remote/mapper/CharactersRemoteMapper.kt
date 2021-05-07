@@ -1,5 +1,6 @@
 package com.example.data.source.remote.mapper
 
+import com.example.data.entity.CharacterEntity
 import com.example.data.entity.CharacterResponse
 import com.example.domain.models.CharacterDetailModel
 import com.example.domain.models.CharacterModel
@@ -18,7 +19,7 @@ class CharactersRemoteMapperImpl : CharactersRemoteMapper {
             CharacterModel(
                 id = item.id ?: 0,
                 name = item.name ?: "",
-                image = item.thumbnail?.path ?: "" + "." + item.thumbnail?.extension
+                image = parseImage(item)
             )
         } ?: emptyList()
     )
@@ -28,9 +29,13 @@ class CharactersRemoteMapperImpl : CharactersRemoteMapper {
         return CharacterDetailModel(
             id = first?.id ?: 0,
             name = first?.name ?: "",
-            image = first?.thumbnail?.path ?: "" + "." + first?.thumbnail?.extension,
+            image = parseImage(first),
             description = first?.description ?: ""
         )
     }
 
+    private fun parseImage(item: CharacterEntity?): String {
+        val image = (item?.thumbnail?.path ?: "") + "." + item?.thumbnail?.extension
+        return image.replace("http", "https")
+    }
 }

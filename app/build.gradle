@@ -1,35 +1,45 @@
 plugins {
-    id 'com.android.application'
+    id "com.android.application"
     id 'kotlin-android'
 }
+apply from: "../mb-base.gradle"
+apply plugin: "androidx.navigation.safeargs.kotlin"
 
 android {
-    compileSdkVersion 30
-    buildToolsVersion "30.0.3"
-
     defaultConfig {
         applicationId "com.example.marveldemo"
-        minSdkVersion 23
-        targetSdkVersion 30
-        versionCode 1
-        versionName "1.0"
-
-        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
 
     buildTypes {
+        debug {
+            buildConfigField "String", "PRIVATE_API_KEY_VALUE", '"5ee5ea753a01df342a022e01badde6c0fb82640b"'
+            buildConfigField "String", "PUBLIC_API_KEY_VALUE", '"a0a023fbb8396b85d8629230187140e3"'
+            buildConfigField "String", "MARVEL_BASE_URL", '"http://gateway.marvel.com/public/"'
+        }
         release {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'),
-                'proguard-rules.pro'
+                    'proguard-rules.pro'
+            buildConfigField "String", "PRIVATE_API_KEY_VALUE", '"5ee5ea753a01df342a022e01badde6c0fb82640b"'
+            buildConfigField "String", "PUBLIC_API_KEY_VALUE", '"a0a023fbb8396b85d8629230187140e3"'
+            buildConfigField "String", "MARVEL_BASE_URL", '"http://gateway.marvel.com/public/"'
         }
     }
-    compileOptions {
-        sourceCompatibility JavaVersion.VERSION_1_8
-        targetCompatibility JavaVersion.VERSION_1_8
+
+    packagingOptions {
+        exclude 'META-INF/DEPENDENCIES'
+        exclude 'META-INF/LICENSE'
+        exclude 'META-INF/LICENSE.txt'
+        exclude 'META-INF/license.txt'
+        exclude 'META-INF/NOTICE'
+        exclude 'META-INF/NOTICE.txt'
+        exclude 'META-INF/notice.txt'
+        exclude 'META-INF/ASL2.0'
+        exclude("META-INF/*.kotlin_module")
     }
-    kotlinOptions {
-        jvmTarget = '1.8'
+
+    buildFeatures {
+        viewBinding true
     }
 }
 
@@ -41,7 +51,12 @@ dependencies {
     implementation mb_androidArch.lifecycle
     implementation mb_android.values()
     implementation mb_libs.koinViewModel
+    implementation mb_libs.glide
     implementation mb_network.values()
+    implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
+    implementation 'androidx.legacy:legacy-support-v4:1.0.0'
 
-
+    testImplementation mb_test.values()
+    def archTestingVersion = '2.1.0'
+    testImplementation "androidx.arch.core:core-testing:$archTestingVersion"
 }

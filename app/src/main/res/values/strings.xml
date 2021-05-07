@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">Marvel Demo</string>
+    <string name="general_error">Please check your internet connection</string>
 </resources>

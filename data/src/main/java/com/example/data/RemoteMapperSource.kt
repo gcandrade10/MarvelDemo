@@ -1,5 +1,6 @@
 package com.example.data
 
+import android.util.Log
 import com.example.domain.Failure
 import com.example.domain.Result
 import com.squareup.moshi.Moshi
@@ -23,6 +24,7 @@ interface RemoteMapperSource {
                 Result.Error(handleError(response.code(), response.toServerErrorEntity()))
             }
         } catch (exception: Exception) {
+            Log.e("GERRR", "", exception)
             toFailure(handleError)
         }
 
