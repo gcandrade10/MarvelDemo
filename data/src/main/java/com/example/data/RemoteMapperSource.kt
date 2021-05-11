@@ -24,7 +24,6 @@ interface RemoteMapperSource {
                 Result.Error(handleError(response.code(), response.toServerErrorEntity()))
             }
         } catch (exception: Exception) {
-            Log.e("GERRR", "", exception)
             toFailure(handleError)
         }
 

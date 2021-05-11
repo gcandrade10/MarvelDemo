@@ -1,6 +1,8 @@
 # MarvelDemo
 This a demo using [Marvel API](https://developer.marvel.com/docs)
-We are using Clean Architecture, Couroutines, ...
+We are using Clean Architecture, Couroutines, ViewBinding, Navigation, Koin and Retrofit
+
+![marveldemo](.\marveldemo.gif)
 
 ## Domain
 
